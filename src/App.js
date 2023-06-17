@@ -1,8 +1,8 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import MyStuff from "./pages/MyStuff";
-import { Grid, ThemeProvider, Typography, createTheme } from "@mui/material";
+import { Grid, ThemeProvider, createTheme, Link } from "@mui/material";
 
 const appTheme = createTheme({
   breakpoints: {
@@ -34,6 +34,10 @@ const appTheme = createTheme({
     h3: {
       paddingBottom: 8,
       color: "#261d3b",
+      fontFamily: "Montserrat",
+    },
+    h4: {
+      fontFamily: "Montserrat",
     },
     h6: {
       color: "#634e75",
@@ -46,6 +50,7 @@ const appTheme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
+          fontFamily: "Andale Mono",
           textDecoration: "none",
           fontWeight: "bold",
           "&:hover": {
@@ -64,24 +69,14 @@ function App() {
         <ThemeProvider theme={appTheme}>
           <Grid container spacing={6} sx={{ padding: 4, ml: 10 }}>
             <Grid item>
-              <Typography
-                component={Link}
-                to="/"
-                variant="h6"
-                sx={{ textDecoration: "none" }}
-              >
-                Home
-              </Typography>
+              <Link href="/" variant="h6">
+                home
+              </Link>
             </Grid>
             <Grid item>
-              <Typography
-                component={Link}
-                to="/mystuff"
-                variant="h6"
-                sx={{ textDecoration: "none" }}
-              >
-                My Stuff
-              </Typography>
+              <Link href="/mystuff" variant="h6">
+                my stuff
+              </Link>
             </Grid>
           </Grid>
 
