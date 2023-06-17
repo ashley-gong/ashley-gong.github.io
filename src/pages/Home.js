@@ -7,14 +7,13 @@ import headshot from "../assets/DSC01852.jpg";
 
 function Home() {
   return (
-    // <div>
     <Box
       sx={{ p: 8, border: "1px dashed" }}
       margin={{ xs: 5, lg: 20 }}
       color="primary"
     >
-      <Grid container columnSpacing={2}>
-        <Grid item xs={8}>
+      <Grid container columnSpacing={2} rowSpacing={2}>
+        <Grid item xs={12} md={8}>
           <Typography variant="h3" sx={{ textAlign: "left", pb: 3 }}>
             hey, I'm Ashley!
           </Typography>
@@ -50,7 +49,7 @@ function Home() {
             ashleygong@college.harvard.edu
           </Typography>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} md={4}>
           <Box
             component="img"
             sx={{
@@ -64,7 +63,6 @@ function Home() {
         </Grid>
       </Grid>
     </Box>
-    // </div>
   );
 }
 
