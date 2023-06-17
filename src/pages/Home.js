@@ -9,7 +9,7 @@ function Home() {
   return (
     <Box
       sx={{ p: 8, border: "1px dashed" }}
-      margin={{ xs: 5, lg: 20 }}
+      margin={{ mobile: 5, lg: 20 }}
       color="primary"
     >
       <Grid container columnSpacing={2} rowSpacing={2}>
