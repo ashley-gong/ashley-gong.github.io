@@ -2,6 +2,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Box, Grid, IconButton, Link, Typography } from "@mui/material";
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 function Home() {
   return (
@@ -16,7 +17,11 @@ function Home() {
       </Typography>
       <Typography variant="h6" sx={{ textAlign: "left" }}>
         I'm a junior at Harvard studying Computer Science and Classics. Learn
-        more about my work <Link href="/mystuff">here</Link>!
+        more about my work{" "}
+        <Link component={RouterLink} to="/mystuff" variant="h6">
+          here
+        </Link>
+        !
       </Typography>
       <Grid container columnSpacing={2} pt={4}>
         <Grid item>

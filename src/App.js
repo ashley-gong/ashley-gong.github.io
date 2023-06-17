@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link as RouterLink,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import MyStuff from "./pages/MyStuff";
 import { Grid, ThemeProvider, createTheme, Link } from "@mui/material";
@@ -69,12 +74,12 @@ function App() {
         <ThemeProvider theme={appTheme}>
           <Grid container spacing={6} sx={{ padding: 4, ml: 10 }}>
             <Grid item>
-              <Link href="/" variant="h6">
+              <Link component={RouterLink} to="/" variant="h6">
                 home
               </Link>
             </Grid>
             <Grid item>
-              <Link href="/mystuff" variant="h6">
+              <Link component={RouterLink} to="/mystuff" variant="h6">
                 my stuff
               </Link>
             </Grid>
