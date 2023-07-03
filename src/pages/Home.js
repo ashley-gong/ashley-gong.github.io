@@ -15,7 +15,7 @@ function Home() {
       <Grid container columnSpacing={2} rowSpacing={2}>
         <Grid item xs={12} md={8}>
           <Typography variant="h3" sx={{ textAlign: "left", pb: 3 }}>
-            hey, I'm Ashley!
+            hi there, I'm Ashley!
           </Typography>
           <Typography variant="h6" sx={{ textAlign: "left" }}>
             I'm a junior at Harvard studying Computer Science and Classics.
