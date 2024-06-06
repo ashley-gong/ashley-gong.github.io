@@ -5,11 +5,15 @@ import { Link } from "@mui/material";
 function Jobs() {
   return (
     <Project title="jobs">
-      Summer 2023 Cloud Security Change Management Technology Intern at{" "}
+      Summer 2024 Software Engineering Intern (GraphQL Infra Team) at{" "}
+      <Link href="https://www.linkedin.com/">
+        LinkedIn
+      </Link>
+      . Summer 2023 Cloud Security Change Management Technology Intern at{" "}
       <Link href="https://www.deloitte.com/global/en.html">
         Deloitte Global
       </Link>
-      . Incoming{" "}
+      .{" "} 2023 {" "}  
       <Link href="https://csadvising.seas.harvard.edu/opportunities/patel/">
         Alex Patel Fellow
       </Link>{" "}

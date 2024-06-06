@@ -15,11 +15,10 @@ function MyStuff() {
         </Typography>
         <Jobs />
         <Project title="research (cs + classics)">
-          Working on Latin and Greek vocabulary acquisition using digital
+          Improving Latin and Greek vocabulary acquisition using digital
           humanities with Dr. Ivy Livingston and Harvard IT for{" "}
           <Link href="https://hederaproject.org/">The Hedera Project</Link>.
-          Starting ontology extraction research with Dr. Mark Schiefsky and Dr.
-          Saïd Esteban Belmehdi at the{" "}
+          Constructed and analyzed term-document ontology visualizations of the Ancient Greek works of Hippocrates through NLP (and latent semantic indexing) in R with Professor Mark Schiefsky and Dr. Said-Esteban Belmehdi at the{" "}
           <Link href="https://chs.harvard.edu/">
             Center for Hellenic Studies
           </Link>

@@ -3,24 +3,33 @@ import Project from "./Project";
 import Item from "./Item";
 import { Link, Typography } from "@mui/material";
 
-import { createClient } from "@supabase/supabase-js";
+// import { createClient } from "@supabase/supabase-js";
 
 // Create a single supabase client for interacting with your database
-const supabase = createClient(
-  process.env.REACT_APP_SUPABASE_URL,
-  process.env.REACT_APP_SUPABASE_ANON_KEY
-);
+// const supabase = createClient(
+//   process.env.REACT_APP_SUPABASE_URL,
+//   process.env.REACT_APP_SUPABASE_ANON_KEY
+// );
 
-const { data, error } = await supabase.from("about").select("*");
+// const { data, error } = await supabase.from("about").select("*");
 
-console.log(data);
+// console.log(data);
 
-function Coding() {
+export function Coding() {
+  // if (error) {
+  //   return <Typography variant="h3">{error.message}</Typography>;
+  // }
   return (
     <Project title="coding highlights">
       <Typography variant="body2" sx={{ pb: 2 }}>
         Check out my <Link href="https://github.com/ashley-gong">GitHub</Link>!
       </Typography>
+      <Item title="Hedera" link="https://hederaproject.org/">
+        See above.
+      </Item>
+      <Item title="AWS Security Group Remediation" link="https://github.com/ashley-gong/aws-security-group-rule-remediation">
+        Built and unit-tested AWS EC2 security group rule remediation script in Python using Boto3 SDK.
+      </Item>
       <Item title="Questable" link="https://questable.vercel.app/">
         Designed and implemented theme and UI for{" "}
         <Link href="https://socialgood.hcs.harvard.edu/">

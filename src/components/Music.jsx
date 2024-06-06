@@ -17,10 +17,10 @@ function Music() {
           Harvard-Radcliffe Orchestra
         </Link>
         , sometimes with Continuo, sometimes for the{" "}
-        <Link href="https://www.instagram.com/p/CgksLsPpUlN/">
+        <Link href="https://www.instagram.com/p/CgksLsPpUlN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
           Mexican Ambassador
         </Link>{" "}
-        to the US :0. Reed squeaker of 11 years!
+        to the US. Reed squeaker of 12 years!
       </Item>
     </Project>
   );
