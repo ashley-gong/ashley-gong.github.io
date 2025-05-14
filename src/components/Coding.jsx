@@ -22,10 +22,13 @@ export function Coding() {
   return (
     <Project title="coding highlights">
       <Typography variant="body2" sx={{ pb: 2 }}>
-        Check out my <Link href="https://github.com/ashley-gong">GitHub</Link>!
+        Also, check out my <Link href="https://github.com/ashley-gong">GitHub</Link>!
       </Typography>
+      <Item title="Intertext.AI" link="https://github.com/ashley-gong/intertext.ai-public">
+        Senior thesis/NAACL publication: a novel LLM-augmented interface that assists classicists in finding intertextual allusions among Latin texts.
+      </Item>
       <Item title="Hedera" link="https://hederaproject.org/">
-        See above.
+        A digital humanities platform for beginner Latin students to develop vocabulary acquisition and reading comprehension via lemmatization support and progressively difficult texts.
       </Item>
       <Item title="AWS Security Group Remediation" link="https://github.com/ashley-gong/aws-security-group-rule-remediation">
         Built and unit-tested AWS EC2 security group rule remediation script in Python using Boto3 SDK.

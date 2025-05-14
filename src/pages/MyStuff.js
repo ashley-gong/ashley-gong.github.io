@@ -15,6 +15,8 @@ function MyStuff() {
         </Typography>
         <Jobs />
         <Project title="research (cs + classics)">
+          <p>Wrote/coded a senior thesis, which won highest honors and the best undergraduate thesis in Latin at Harvard, and published it at the North American Chapter of the Association for Computational Linguistics (NAACL)!</p>
+          <p>Read the conference paper: <Link href="https://aclanthology.org/2025.nlp4dh-1.35/"> "Augmenting Close Reading for Classical Latin using BERT for Intertextual Exploration</Link>."</p>
           Improving Latin and Greek vocabulary acquisition using digital
           humanities with Dr. Ivy Livingston and Harvard IT for{" "}
           <Link href="https://hederaproject.org/">The Hedera Project</Link>.
