@@ -3,7 +3,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Box, Grid, IconButton, Link, Typography } from "@mui/material";
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
-import headshot from "../assets/DSC01852.jpg";
+import headshot from "../assets/IMG_7804.jpg";
 
 function Home() {
   return (
