@@ -18,7 +18,7 @@ function Home() {
             hi there, I'm Ashley!
           </Typography>
           <Typography variant="h6" sx={{ textAlign: "left" }}>
-            I'm a senior at Harvard studying Computer Science and Classics.
+            I'm a recent grad from Harvard who studied Computer Science and Classics.
             Learn more about my work{" "}
             <Link component={RouterLink} to="/mystuff" variant="h6">
               here
