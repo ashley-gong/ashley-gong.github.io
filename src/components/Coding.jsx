@@ -3,22 +3,8 @@ import Project from "./Project";
 import Item from "./Item";
 import { Link, Typography } from "@mui/material";
 
-// import { createClient } from "@supabase/supabase-js";
-
-// Create a single supabase client for interacting with your database
-// const supabase = createClient(
-//   process.env.REACT_APP_SUPABASE_URL,
-//   process.env.REACT_APP_SUPABASE_ANON_KEY
-// );
-
-// const { data, error } = await supabase.from("about").select("*");
-
-// console.log(data);
 
 export function Coding() {
-  // if (error) {
-  //   return <Typography variant="h3">{error.message}</Typography>;
-  // }
   return (
     <Project title="coding highlights">
       <Typography variant="body2" sx={{ pb: 2 }}>

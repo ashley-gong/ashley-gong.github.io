@@ -9,8 +9,6 @@ import Home from "./pages/Home";
 import MyStuff from "./pages/MyStuff";
 import { Grid, ThemeProvider, createTheme, Link } from "@mui/material";
 
-// https://www.sanity.io/guides/build-your-first-blog-using-react#6e35f2e6cb9c
-// try using Tailwind CSS to style, not MUI
 
 const appTheme = createTheme({
   breakpoints: {
