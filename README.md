@@ -1,2 +1,2 @@
 ## Personal Website
-This is my personal website! Coded with React.
+This is my personal website! Written with React (desperately needs refactoring, coming soon).
