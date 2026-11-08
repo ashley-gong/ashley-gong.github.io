@@ -1,4 +1,4 @@
-// Builds docs/index.html and docs/mystuff.html from content.json.
+// Builds docs/index.html from content.json.
 // No dependencies: run with `node build.mjs`.
 import { readFileSync, writeFileSync } from "node:fs";
 
@@ -7,15 +7,19 @@ const c = JSON.parse(readFileSync(new URL("content.json", import.meta.url)));
 const esc = (s) =>
   String(s).replace(/[&<>"']/g, (ch) => `&#${ch.charCodeAt(0)};`);
 
-// Escapes text, then turns [label](url) into links. Only http(s) and
-// relative URLs are allowed, so content can never inject script.
+// Escapes text, then turns [label](url) into links. Only http(s), relative
+// .html and #anchor URLs are allowed, so content can never inject script.
 const md = (s) =>
   esc(s).replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, label, url) =>
-    /^(https?:\/\/|[\w.-]+\.html$)/.test(url) ? `<a href="${url}">${label}</a>` : m
+    /^(https?:\/\/|[\w.-]+\.html$|#[\w-]+$)/.test(url) ? `<a href="${url}">${label}</a>` : m
   );
 
-const link = (title, url) =>
-  url ? `<a class="item-title" href="${esc(url)}">${esc(title)}</a>` : `<b class="item-title">${esc(title)}</b>`;
+const a = (text, url, cls = "") =>
+  url
+    ? `<a${cls ? ` class="${cls}"` : ""} href="${esc(url)}">${esc(text)}</a>`
+    : `<span${cls ? ` class="${cls}"` : ""}>${esc(text)}</span>`;
+
+const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 const icons = {
   github:
@@ -26,7 +30,35 @@ const icons = {
 const icon = (name, url) =>
   `<a class="icon" href="${esc(url)}" aria-label="${name}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${icons[name]}"/></svg></a>`;
 
-const page = (body) => `<!doctype html>
+const jobs = (list) => `<ul class="jobs">
+${list
+  .map(
+    (j) => `    <li><span class="when">${esc(j.when)}</span><span>${esc(j.role)} <span class="sep">·</span> ${a(j.org, j.link)}</span></li>`
+  )
+  .join("\n")}
+  </ul>`;
+
+const items = (list) => `<div class="items">
+${list
+  .map(
+    (i) => `    <article>
+      <h3>${a(i.title + (i.link ? " ↗" : ""), i.link)}</h3>
+      <p>${md(i.text)}</p>
+    </article>`
+  )
+  .join("\n")}
+  </div>`;
+
+const section = (s) => `<section id="${slug(s.title)}">
+  <h2>${esc(s.title)}</h2>
+  ${s.note ? `<p class="note">${md(s.note)}</p>` : ""}
+  ${(s.paragraphs || []).map((p) => `<p>${md(p)}</p>`).join("\n  ")}
+  ${s.jobs ? jobs(s.jobs) : ""}
+  ${s.items ? items(s.items) : ""}
+</section>`;
+
+const i = c.intro;
+const html = `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -41,36 +73,22 @@ const page = (body) => `<!doctype html>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav><a href="index.html">home</a><a href="mystuff.html">my stuff</a></nav>
-${body}
+<nav>${c.sections.map((s) => `<a href="#${slug(s.title)}">${esc(s.title)}</a>`).join("")}</nav>
+<main>
+<header class="card">
+  <div>
+    <h1>${esc(i.greeting)}</h1>
+    <p class="lead">${md(i.bio)}</p>
+    <p class="icons">${icon("github", i.github)}${icon("linkedin", i.linkedin)}</p>
+    ${i.email ? `<p>${esc(i.email)}</p>` : ""}
+  </div>
+  <img src="${esc(i.photo)}" alt="${esc(c.name)}" width="250" height="328">
+</header>
+${c.sections.map(section).join("\n")}
+</main>
 </body>
 </html>
 `;
 
-const h = c.home;
-const home = page(`<main class="card">
-  <div>
-    <h1>${esc(h.greeting)}</h1>
-    <p class="lead">${md(h.bio)}</p>
-    <p class="icons">${icon("github", h.github)}${icon("linkedin", h.linkedin)}</p>
-    <p>${esc(h.email)}</p>
-  </div>
-  <img src="${esc(h.photo)}" alt="${esc(c.name)}" width="250" height="328">
-</main>`);
-
-const section = (s) => `<section>
-  <h2>${esc(s.title)}</h2>
-  ${s.note ? `<p class="note">${md(s.note)}</p>` : ""}
-  ${(s.paragraphs || []).map((p) => `<p>${md(p)}</p>`).join("\n  ")}
-  ${(s.items || []).map((i) => `<p class="item">${link(i.title, i.link)} • ${md(i.text)}</p>`).join("\n  ")}
-</section>`;
-
-const m = c.mystuff;
-const mystuff = page(`<main class="stuff">
-<p class="intro">${md(m.intro)}</p>
-${m.sections.map(section).join("\n")}
-</main>`);
-
-writeFileSync(new URL("docs/index.html", import.meta.url), home);
-writeFileSync(new URL("docs/mystuff.html", import.meta.url), mystuff);
-console.log("Built docs/index.html and docs/mystuff.html");
+writeFileSync(new URL("docs/index.html", import.meta.url), html);
+console.log("Built docs/index.html");
