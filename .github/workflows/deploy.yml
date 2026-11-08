@@ -1,5 +1,6 @@
-# Builds the site from content.md and publishes it to GitHub Pages
-# on every push to master (or manually from the Actions tab).
+# Builds the site and publishes it to GitHub Pages on every push to master,
+# manually from the Actions tab, or when the private content repo
+# (ashley-gong/site-content) triggers it after a content change.
 name: Deploy site
 
 on:
@@ -25,6 +26,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: ashley-gong/site-content
+          ssh-key: ${{ secrets.CONTENT_DEPLOY_KEY }}
+          path: content
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:

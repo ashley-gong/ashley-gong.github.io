@@ -1,7 +1,8 @@
-// Builds dist/ from content.md and public/.
-// No dependencies: run with `node build.mjs`. See the note at the top of
-// content.md for the (small) Markdown format it understands.
-import { readFileSync, writeFileSync, rmSync, cpSync } from "node:fs";
+// Builds dist/ from content/ (a checkout of the private content repo) and public/.
+// content/content.md is the page text; every other file in content/ (e.g. the
+// photo) is copied into dist/. No dependencies: run with `node build.mjs`. See the
+// note at the top of content.md for the (small) Markdown format it understands.
+import { readFileSync, writeFileSync, rmSync, cpSync, existsSync } from "node:fs";
 
 const root = new URL("./", import.meta.url);
 const SETTINGS = ["name", "description", "github", "linkedin", "email", "photo"];
@@ -149,8 +150,16 @@ ${c.sections.map(section).join("\n")}
 
 // ---------- write dist/ ----------
 
-const content = parse(readFileSync(new URL("content.md", root), "utf8"));
+const contentDir = new URL("content/", root);
+const contentFile = new URL("content.md", contentDir);
+if (!existsSync(contentFile)) throw new Error("content/content.md not found (the private content repo goes in content/)");
+const content = parse(readFileSync(contentFile, "utf8"));
 rmSync(new URL("dist", root), { recursive: true, force: true });
 cpSync(new URL("public", root), new URL("dist", root), { recursive: true });
+// Copy content assets, skipping the Markdown source and repo metadata.
+cpSync(contentDir, new URL("dist", root), {
+  recursive: true,
+  filter: (src) => !/(^|\/)(\.git|\.github|README\.md|content\.md)$/.test(src),
+});
 writeFileSync(new URL("dist/index.html", root), page(content));
 console.log("Built dist/");
