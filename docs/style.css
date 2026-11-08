@@ -19,7 +19,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 1.0625rem/1.65 var(--sans);
+  font: 1rem/1.65 var(--mono);
 }
 
 main { max-width: 52rem; margin: 0 auto; padding: 0 1.5rem 6rem; }
@@ -51,8 +51,7 @@ nav a:hover { color: var(--hover); }
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 2.5rem;
   align-items: center;
-  padding: 3rem;
-  border: 1px dashed;
+  padding: 1rem 0 0;
   margin-bottom: 4rem;
 }
 h1 {
@@ -99,7 +98,7 @@ article p { margin: 0; }
 @media (max-width: 640px) {
   nav { gap: 0.5rem 1.25rem; padding: 1.25rem 1rem; }
   main { padding: 0 1rem 4rem; }
-  .card { grid-template-columns: minmax(0, 1fr); padding: 1.5rem; gap: 1.5rem; }
+  .card { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
   .card img { width: 180px; }
   h1 { font-size: 2rem; }
   .jobs li { grid-template-columns: minmax(0, 1fr); gap: 0; }
