@@ -12,53 +12,37 @@
     {
       "title": "jobs",
       "jobs": [
-        { "when": "now", "role": "Software Engineer", "org": "Bandana" },
-        { "when": "2024", "role": "Software Engineering Intern, GraphQL Infra", "org": "LinkedIn", "link": "https://www.linkedin.com/" },
-        { "when": "2023", "role": "Cloud Security Change Management Technology Intern", "org": "Deloitte Global", "link": "https://www.deloitte.com/global/en.html" },
-        { "when": "2023", "role": "Alex Patel Fellow, CS61: Systems Programming and Machine Organization", "org": "Harvard SEAS", "link": "https://csadvising.seas.harvard.edu/opportunities/patel/" },
-        { "when": "2022", "role": "Research Fellow", "org": "Echelon Insights", "link": "https://echeloninsights.com/" },
-        { "when": "college", "role": "Peer Tutor", "org": "Harvard Academic Resource Center", "link": "https://academicresourcecenter.harvard.edu/" },
-        { "when": "college", "role": "Digital Communications Intern", "org": "Harvard College Communications", "link": "https://college.harvard.edu/" }
-      ]
-    },
-    {
-      "title": "research",
-      "items": [
         {
-          "title": "Senior thesis → NAACL",
-          "link": "https://aclanthology.org/2025.nlp4dh-1.35/",
-          "text": "Wrote/coded a senior thesis, which won highest honors and the best undergraduate thesis in Latin at Harvard, and published it at the North American Chapter of the Association for Computational Linguistics (NAACL): \"Augmenting Close Reading for Classical Latin using BERT for Intertextual Exploration.\""
+          "when": "now",
+          "role": "Software Engineer",
+          "org": "Bandana",
+          "link": "https://bandana.com"
         },
         {
-          "title": "The Hedera Project",
-          "link": "https://hederaproject.org/",
-          "text": "Improving Latin and Greek vocabulary acquisition using digital humanities with Dr. Ivy Livingston and Harvard IT."
+          "when": "2024",
+          "role": "Software Engineering Intern, GraphQL Infra",
+          "org": "LinkedIn"
         },
         {
-          "title": "Center for Hellenic Studies",
-          "link": "https://chs.harvard.edu/",
-          "text": "Constructed and analyzed term-document ontology visualizations of the Ancient Greek works of Hippocrates through NLP (and latent semantic indexing) in R with Professor Mark Schiefsky and Dr. Said-Esteban Belmehdi."
+          "when": "2023",
+          "role": "Cloud Security Change Management Technology Intern",
+          "org": "Deloitte Global"
+        },
+        {
+          "when": "2023",
+          "role": "Alex Patel Fellow, CS61: Systems Programming and Machine Organization",
+          "org": "Harvard SEAS",
+          "link": "https://csadvising.seas.harvard.edu/opportunities/patel/"
         }
       ]
     },
     {
-      "title": "projects",
-      "note": "More on my [GitHub](https://github.com/ashley-gong).",
+      "title": "research/projects",
       "items": [
         {
-          "title": "Intertext.AI",
-          "link": "https://github.com/ashley-gong/intertext.ai-public",
-          "text": "Senior thesis/NAACL publication: a novel LLM-augmented interface that assists classicists in finding intertextual allusions among Latin texts."
-        },
-        {
-          "title": "Hedera",
-          "link": "https://hederaproject.org/",
-          "text": "A digital humanities platform for beginner Latin students to develop vocabulary acquisition and reading comprehension via lemmatization support and progressively difficult texts."
-        },
-        {
-          "title": "AWS Security Group Remediation",
-          "link": "https://github.com/ashley-gong/aws-security-group-rule-remediation",
-          "text": "Built and unit-tested AWS EC2 security group rule remediation script in Python using Boto3 SDK."
+          "title": "Senior thesis → NAACL",
+          "link": "https://aclanthology.org/2025.nlp4dh-1.35/",
+          "text": "Highest honors and the best undergraduate thesis in Latin at Harvard, published at the North American Chapter of the Association for Computational Linguistics (NAACL): \"Augmenting Close Reading for Classical Latin using BERT for Intertextual Exploration.\""
         }
       ]
     },
@@ -66,13 +50,8 @@
       "title": "music",
       "items": [
         {
-          "title": "Continuo",
-          "link": "https://continuoboston.wixsite.com/music",
-          "text": "President of Continuo from 2021-2023. Created new executive team structure and partnerships, including with Harvard Office of the Arts, and oversaw community performances."
-        },
-        {
           "title": "Oboe",
-          "text": "I play the oboe, previously in the [Harvard-Radcliffe Orchestra](https://www.harvardradcliffeorchestra.org/), previously with Continuo, once for the [Mexican Ambassador](https://www.instagram.com/p/CgksLsPpUlN/) to the US!"
+          "text": "I play the oboe, previously in the [Harvard-Radcliffe Orchestra](https://www.harvardradcliffeorchestra.org/), once for the [Mexican Ambassador](https://www.instagram.com/p/CgksLsPpUlN/) to the US!"
         }
       ]
     }
