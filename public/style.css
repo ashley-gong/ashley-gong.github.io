@@ -90,6 +90,7 @@ h2 {
 .rows h3 { font: 500 1.125rem/1.4 var(--heading); margin: 0 0 0.25rem; color: var(--dark); }
 .rows h3 a { text-decoration: none; }
 .rows p { margin: 0; }
+.rows p + p, .lead + .lead { margin-top: 0.75rem; }
 
 @media (max-width: 640px) {
   nav { gap: 0.5rem 1.25rem; padding: 1.25rem 1rem; }
