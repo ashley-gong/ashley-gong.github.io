@@ -1,0 +1,95 @@
+{
+  "name": "Ashley Gong",
+  "description": "Ashley Gong: computer science, classics, and music.",
+  "home": {
+    "greeting": "hi there, I'm Ashley!",
+    "bio": "I'm a recent grad from Harvard who studied Computer Science and Classics. Learn more about my work [here](mystuff.html)!",
+    "email": "ashleygong@college.harvard.edu",
+    "github": "https://github.com/ashley-gong",
+    "linkedin": "https://www.linkedin.com/in/ashley-gong-03/",
+    "photo": "headshot.jpg"
+  },
+  "mystuff": {
+    "intro": "Here are a few things I'm currently doing or have worked on! Scroll for music :)",
+    "sections": [
+      {
+        "title": "jobs",
+        "paragraphs": [
+          "Summer 2024 Software Engineering Intern (GraphQL Infra Team) at [LinkedIn](https://www.linkedin.com/). Summer 2023 Cloud Security Change Management Technology Intern at [Deloitte Global](https://www.deloitte.com/global/en.html). 2023 [Alex Patel Fellow](https://csadvising.seas.harvard.edu/opportunities/patel/) for CS61: Systems Programming and Machine Organization. Summer 2022 Research Fellow at [Echelon Insights](https://echeloninsights.com/). Peer Tutor for the [Harvard Academic Resource Center](https://academicresourcecenter.harvard.edu/). Digital Communications Intern for [Harvard College Communications](https://college.harvard.edu/)."
+        ]
+      },
+      {
+        "title": "research (cs + classics)",
+        "paragraphs": [
+          "Wrote/coded a senior thesis, which won highest honors and the best undergraduate thesis in Latin at Harvard, and published it at the North American Chapter of the Association for Computational Linguistics (NAACL)!",
+          "Read the conference paper: [\"Augmenting Close Reading for Classical Latin using BERT for Intertextual Exploration\"](https://aclanthology.org/2025.nlp4dh-1.35/).",
+          "Improving Latin and Greek vocabulary acquisition using digital humanities with Dr. Ivy Livingston and Harvard IT for [The Hedera Project](https://hederaproject.org/). Constructed and analyzed term-document ontology visualizations of the Ancient Greek works of Hippocrates through NLP (and latent semantic indexing) in R with Professor Mark Schiefsky and Dr. Said-Esteban Belmehdi at the [Center for Hellenic Studies](https://chs.harvard.edu/)."
+        ]
+      },
+      {
+        "title": "coding highlights",
+        "note": "Also, check out my [GitHub](https://github.com/ashley-gong)!",
+        "items": [
+          {
+            "title": "Intertext.AI",
+            "link": "https://github.com/ashley-gong/intertext.ai-public",
+            "text": "Senior thesis/NAACL publication: a novel LLM-augmented interface that assists classicists in finding intertextual allusions among Latin texts."
+          },
+          {
+            "title": "Hedera",
+            "link": "https://hederaproject.org/",
+            "text": "A digital humanities platform for beginner Latin students to develop vocabulary acquisition and reading comprehension via lemmatization support and progressively difficult texts."
+          },
+          {
+            "title": "AWS Security Group Remediation",
+            "link": "https://github.com/ashley-gong/aws-security-group-rule-remediation",
+            "text": "Built and unit-tested AWS EC2 security group rule remediation script in Python using Boto3 SDK."
+          },
+          {
+            "title": "Questable",
+            "link": "https://questable.vercel.app/",
+            "text": "Designed and implemented theme and UI for [Harvard Tech for Social Good's](https://socialgood.hcs.harvard.edu/) Questable, a K-6 learning management system that gamifies the classroom experience. Also integrated Google Classroom API and developed workflow for teachers to import tasks and mass approve student coursework."
+          },
+          {
+            "title": "Mini Shell",
+            "link": "https://cs61.seas.harvard.edu/site/2022/Shell/",
+            "text": "Using C++, built subset of Bash shell. Parsed simple commands using BNF grammar, added more complex syntax like command lists and conditionals, implemented pipeline and redirecting functionality, and finally the deceptively simple “cd” command."
+          },
+          {
+            "title": "Harvard Open Data Project",
+            "link": "https://www.hodp.org/",
+            "text": "Current Technology Director of HODP. Maintained and improved website UI with React and Sanity, [experimented with Tableau](https://www.hodp.org/blog/where-do-hodp-s-accents-come-from), and facilitated club-wide data science initiatives. Working on building student-run wiki (coming soon!)."
+          },
+          {
+            "title": "Datamatch",
+            "link": "https://datamatch.me/",
+            "text": "Incorporated feature of encoding short answer survey responses using SBERT ML Sentence Transformers into match-matching algorithm used by over 50,000 students nationwide."
+          },
+          {
+            "title": "Key Tweet Graphic Generator",
+            "link": "https://github.com/ashley-gong/Key-Tweet-Generator",
+            "text": "Simple Flask web app developed to automate Twitter graphics in Echelon Insights client reports. Never deployed and sadly obsolete with the new API restrictions."
+          },
+          {
+            "title": "Other",
+            "text": "Created this website because I felt like it. Built MiniML, a mini version of an OCaml interpreter using dynamic and lexical semantics. Coded [Reed Time](https://github.com/ashley-gong/cs50-finalproject), a web application to assist oboists in tracking their reedmaking productivity."
+          }
+        ]
+      },
+      {
+        "title": "music",
+        "items": [
+          {
+            "title": "Continuo",
+            "link": "https://continuoboston.wixsite.com/music",
+            "text": "President of Continuo from 2021-2023. Created new executive team structure and partnerships, including with Harvard Office of the Arts, and oversaw community performances."
+          },
+          {
+            "title": "Oboe",
+            "text": "I play the oboe, previously in the [Harvard-Radcliffe Orchestra](https://www.harvardradcliffeorchestra.org/), previously with Continuo, once for the [Mexican Ambassador](https://www.instagram.com/p/CgksLsPpUlN/) to the US!"
+          }
+        ]
+      }
+    ]
+  }
+}
