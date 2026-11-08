@@ -28,11 +28,11 @@ I'm a software engineer who studied Computer Science and Classics at Harvard. He
 - 2023 | Cloud Security Change Management Technology Intern · Deloitte Global
 - 2023 | Alex Patel Fellow, CS61: Systems Programming and Machine Organization · [Harvard SEAS](https://csadvising.seas.harvard.edu/opportunities/patel/)
 
-## research/projects
+## research
 
-### 2025 | [Senior thesis → NAACL](https://aclanthology.org/2025.nlp4dh-1.35/)
+### 2025 | [NAACL: "Augmenting Close Reading for Classical Latin using BERT for Intertextual Exploration"](https://aclanthology.org/2025.nlp4dh-1.35/)
 
-Highest honors and the best undergraduate thesis in Latin at Harvard, published at the North American Chapter of the Association for Computational Linguistics (NAACL): "Augmenting Close Reading for Classical Latin using BERT for Intertextual Exploration."
+Highest honors and the best undergraduate thesis in Latin at Harvard, published at the North American Chapter of the Association for Computational Linguistics (NAACL).
 
 ## music
 
