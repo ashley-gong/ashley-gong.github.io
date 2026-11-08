@@ -54,6 +54,8 @@ function parse(text) {
   flush();
 
   if (!c.greeting) throw new Error('content.md needs a "# greeting" line');
+  if (c.email && !/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(c.email))
+    throw new Error(`content.md: "email: ${c.email}" doesn't look like an email address`);
   return c;
 }
 
@@ -156,7 +158,7 @@ const page = (c) => `<!doctype html>
     <h1>${esc(c.greeting)}</h1>
     ${c.bio.map((p) => `<p class="lead">${md(p)}</p>`).join("\n    ")}
     <p class="icons">${icon("github", c.github)}${icon("linkedin", c.linkedin)}</p>
-    ${c.email ? `<p>${esc(c.email)}</p>` : ""}
+    ${c.email ? `<p><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>` : ""}
   </div>
   ${c.photo ? `<img src="${esc(c.photo)}" alt="${esc(c.name || "")}" width="250" height="328">` : ""}
 </header>
