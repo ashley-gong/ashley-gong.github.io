@@ -73,10 +73,9 @@ h2 {
   color: var(--dark);
   margin: 0 0 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px dashed;
+  border-bottom: 1px solid;
 }
 .note { margin: -0.5rem 0 1.5rem; font-size: 0.9375rem; }
-p { max-width: 68ch; }
 
 /* jobs timeline */
 .jobs { list-style: none; margin: 0; padding: 0; }
