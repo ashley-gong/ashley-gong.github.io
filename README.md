@@ -2,7 +2,6 @@
 
 Personal site. Plain HTML + CSS, no dependencies, no JavaScript shipped.
 
-- **Edit text:** `content.md` (format notes are at the top of the file). Editing it on github.com works — commit and the site redeploys in about a minute.
-- **Edit styles / images:** `public/`
-- **Preview locally:** `node build.mjs && python3 -m http.server 8000 -d dist`
-- **Deploy:** automatic on push to `master` via `.github/workflows/deploy.yml`.
+- **Text and photo:** live in a private repo, `ashley-gong/site-content` (`content.md` + images). Editing there on github.com triggers a redeploy here in about a minute.
+- **Styles / icons:** `public/`
+- **Deploy:** automatic on push to `master` via `.github/workflows/deploy.yml`, which pulls in the private content with a read-only deploy key (`CONTENT_DEPLOY_KEY` secret).
