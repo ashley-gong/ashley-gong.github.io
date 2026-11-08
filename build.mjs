@@ -61,6 +61,7 @@ const html = `<!doctype html>
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="${esc(c.description)}">
 <title>${esc(c.name)}</title>
+<link rel="icon" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap">
 <link rel="stylesheet" href="style.css">
