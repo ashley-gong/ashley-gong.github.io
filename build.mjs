@@ -67,16 +67,31 @@ function splitWhen(s) {
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (ch) => `&#${ch.charCodeAt(0)};`);
 
-// Escapes text first, then applies [links](url), **bold** and *italic*.
+// Escapes text first, then applies `code`, [links](url), ***bold italic***,
+// **bold** / __bold__, *italic* / _italic_ and ~~strikethrough~~.
 // Only http(s), mailto, relative .html and #anchor URLs become links, so
-// content can never inject script.
-const md = (s) =>
-  esc(s)
+// content can never inject script. Code spans and link URLs are set aside
+// while formatting runs, so their * _ ~ stay literal. Underscores only count
+// at word edges, so snake_case is left alone.
+const md = (s) => {
+  const kept = [];
+  const keep = (html) => `\u0000${kept.push(html) - 1}\u0000`;
+  return esc(s)
+    .replace(/`([^`]+)`/g, (_, code) => keep(`<code>${code}</code>`))
     .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, label, url) =>
-      /^(https?:\/\/|mailto:|[\w.-]+\.html$|#[\w-]+$)/.test(url) ? `<a href="${url}">${label}</a>` : m
+      /^(https?:\/\/|mailto:|[\w.-]+\.html$|#[\w-]+$)/.test(url) ? `<a href="${keep(url)}">${label}</a>` : keep(m)
     )
-    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    .replace(/\*(.+?)\*/g, "<em>$1</em>");
+    .replace(/\*\*\*(?=\S)(.+?)(?<=\S)\*\*\*/g, "<strong><em>$1</em></strong>")
+    .replace(/(?<!\w)___(?=\S)(.+?)(?<=\S)___(?!\w)/g, "<strong><em>$1</em></strong>")
+    .replace(/\*\*(?=\S)(.+?)(?<=\S)\*\*/g, "<strong>$1</strong>")
+    .replace(/(?<!\w)__(?=\S)(.+?)(?<=\S)__(?!\w)/g, "<strong>$1</strong>")
+    .replace(/\*(?=\S)(.+?)(?<=\S)\*/g, "<em>$1</em>")
+    .replace(/(?<!\w)_(?=\S)(.+?)(?<=\S)_(?!\w)/g, "<em>$1</em>")
+    .replace(/~~(?=\S)(.+?)(?<=\S)~~/g, "<del>$1</del>")
+    .replace(/\u0000(\d+)\u0000/g, function restore(_, i) {
+      return kept[i].replace(/\u0000(\d+)\u0000/g, restore);
+    });
+};
 
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
@@ -99,7 +114,10 @@ const block = (b) => {
     b.type === "item"
       ? `<h3>${title(b.text)}</h3>${b.paras.map((p) => `<p>${md(p)}</p>`).join("")}`
       : md(b.text).replace(/ · /g, ' <span class="sep">·</span> ');
-  return `    <li><span class="when">${esc(b.when)}</span><div>${body}</div></li>`;
+  // No "when": drop the date column so the entry uses the full width.
+  return b.when
+    ? `    <li><span class="when">${esc(b.when)}</span><div>${body}</div></li>`
+    : `    <li class="no-when"><div>${body}</div></li>`;
 };
 
 // Consecutive rows/items are grouped into one two-column list.
