@@ -40,6 +40,7 @@
       "title": "research/projects",
       "items": [
         {
+          "when": "2025",
           "title": "Senior thesis → NAACL",
           "link": "https://aclanthology.org/2025.nlp4dh-1.35/",
           "text": "Highest honors and the best undergraduate thesis in Latin at Harvard, published at the North American Chapter of the Association for Computational Linguistics (NAACL): \"Augmenting Close Reading for Classical Latin using BERT for Intertextual Exploration.\""

@@ -30,24 +30,18 @@ const icons = {
 const icon = (name, url) =>
   `<a class="icon" href="${esc(url)}" aria-label="${name}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${icons[name]}"/></svg></a>`;
 
-const jobs = (list) => `<ul class="jobs">
+// Jobs and items share the same two-column rows: `when` on the left.
+const rows = (list, render) => `<ul class="rows">
 ${list
-  .map(
-    (j) => `    <li><span class="when">${esc(j.when)}</span><span>${esc(j.role)} <span class="sep">·</span> ${a(j.org, j.link)}</span></li>`
-  )
+  .map((r) => `    <li><span class="when">${esc(r.when || "")}</span><div>${render(r)}</div></li>`)
   .join("\n")}
   </ul>`;
 
-const items = (list) => `<div class="items">
-${list
-  .map(
-    (i) => `    <article>
-      <h3>${a(i.title + (i.link ? " ↗" : ""), i.link)}</h3>
-      <p>${md(i.text)}</p>
-    </article>`
-  )
-  .join("\n")}
-  </div>`;
+const jobs = (list) =>
+  rows(list, (j) => `${esc(j.role)} <span class="sep">·</span> ${a(j.org, j.link)}`);
+
+const items = (list) =>
+  rows(list, (i) => `<h3>${a(i.title + (i.link ? " ↗" : ""), i.link)}</h3><p>${md(i.text)}</p>`);
 
 const section = (s) => `<section id="${slug(s.title)}">
   <h2>${esc(s.title)}</h2>
